@@ -12,13 +12,16 @@ let formData = {
 
 const fillFormFields = () => {
   try {
-        //первое посещение странички- данных в хранинилище нет?- проверка: если null сделать return// или проверить длинну LS до того как доставать данные
-    if (localStorage.length === 0) {
-      return;
-    }
+        //первое посещение странички- данных в хранинилище нет?- проверка: если null сделать return// или проверить длинну LS до того как доставать данные/Данные могут использовать другие программы = сделаем проверку ниже (используя null)
+    // if (localStorage.length === 0) {
+    //   return;
+    // }
     
     const formDataFromLS = JSON.parse(localStorage.getItem(localStorageKey));
 
+if (formDataFromLS === null) {
+  return;
+}
 
 //если поменять данные в одном месте и перезайти = всё в др полях стирается - чтоб это поменять = когда достаем данные с LS сразу их записывать в обьект formDate.для того чтоб обновился и хранил все данные с LS
 formData = formDataFromLS;
