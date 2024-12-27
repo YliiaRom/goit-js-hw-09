@@ -84,17 +84,6 @@ return `<li class="gallery-item">
 </li>`
 };
 
-/*шаблон*/
-// <li class="gallery-item">
-// 	<a class="gallery-link" href="large-image.jpg">
-// 		<img 
-// 			class="gallery-image" 
-// 			src="small-image.jpg" 
-// 			alt="Image description" 
-// 			/>
-// 	</a>
-// </li>`;
-
 //добавление в список html содержания 
 listGallery.innerHTML = createItemsGallery;
 
@@ -107,7 +96,7 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 // Ініціалізація SimpleLightbox
 /*Создаётся объект на основе библиотеки -получает доступ к функциям и св-вам библиотеки, он перехватывает клик по ссылки. параметры берутся из документации */
 const lightbox = new SimpleLightbox('.gallery a', {
-  captions: true,              // Увімкнути підписи
-  captionsData: 'alt',         // Використовувати alt як підпис
+  captions: true,              // вкл подписи 
+  captionsData: 'alt',         // 'alt'= подпись
   captionDelay: 250,           // Затримка появи підпису (250 мс)
 });
